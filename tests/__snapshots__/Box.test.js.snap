@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Box> - default 1`] = `
+<div
+  style={
+    Object {
+      "WebkitAlignSelf": undefined,
+      "WebkitBoxSizing": "border-box",
+      "WebkitFlexBasis": undefined,
+      "WebkitFlexGrow": undefined,
+      "WebkitFlexShrink": undefined,
+      "WebkitOrder": undefined,
+      "alignSelf": undefined,
+      "boxSizing": "border-box",
+      "flexBasis": undefined,
+      "flexGrow": undefined,
+      "flexShrink": undefined,
+      "order": undefined,
+    }
+  }
+/>
+`;

@@ -1,0 +1,53 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true,
+      "modules": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "plugins": [
+    "react",
+    "babel"
+  ],
+  "extends": [
+    "airbnb"
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      120
+    ],
+    "indent": [
+      2,
+      4,
+      {
+        "SwitchCase": 1,
+        "VariableDeclarator": 1
+      }
+    ],
+    "react/jsx-indent": [
+      2,
+      4
+    ],
+    "react/require-default-props": 0,
+    "import/prefer-default-export": 0,
+    "react/forbid-prop-types": 0,
+    "react/prop-types": 0
+  },
+  "globals": {
+    "test": true,
+    "expect": true,
+    "afterAll": true,
+    "beforeAll": true,
+    "afterEach": true,
+    "beforeEach": true,
+    "jest": true
+  }
+}
