@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ROOT_PATH = path.resolve(__dirname);
-const EXAMPLE_PATH = path.join(ROOT_PATH, '/example');
+const EXAMPLE_PATH = path.join(ROOT_PATH, '/examples');
 
 module.exports = {
     context: EXAMPLE_PATH,
