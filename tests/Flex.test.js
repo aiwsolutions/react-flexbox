@@ -1,33 +1,35 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Box } from '../dist';
+import { Flex } from '../dist';
 
-test('<Box> - basic settings', () => {
+test('<Flex> - basic settings', () => {
     const comp = renderer.create(
-        <Box
+        <Flex
             style={{ backgroundColor: '#ff0000' }}
             m={1}
             p={1}
+            column
         >
             Title
-        </Box>
+        </Flex>
     );
     expect(comp.toJSON()).toMatchSnapshot();
 });
 
-test('<Box> - className should be passed correctly', () => {
+test('<Flex> - className should be passed correctly', () => {
     const comp = renderer.create(
-        <Box
+        <Flex
             className="test"
+            inline
         />
     );
     expect(comp.toJSON()).toMatchSnapshot();
-    expect(comp.root.findByType('div').props.className).toEqual('test');
+    expect(comp.root.findByType('div').props.className).toEqual('inline-flex test');
 });
 
-test('<Box> - update on property changes', () => {
+test('<Flex> - update on property changes', () => {
     const comp = renderer.create(
-        <Box
+        <Flex
             align="center"
         />
     );
@@ -35,9 +37,9 @@ test('<Box> - update on property changes', () => {
     expect(shouldComponentUpdate({ align: 'flex-start' })).toBeTruthy();
 });
 
-test('<Box> - update on layout changes', () => {
+test('<Flex> - update on layout changes', () => {
     const comp = renderer.create(
-        <Box
+        <Flex
             m={1}
         />
     );
@@ -45,15 +47,15 @@ test('<Box> - update on layout changes', () => {
     expect(shouldComponentUpdate({ m: 2 })).toBeTruthy();
 });
 
-test('<Box> - should not update if nothing changes', () => {
+test('<Flex> - should not update if nothing changes', () => {
     const comp = renderer.create(
-        <Box
-            align="center"
+        <Flex
+            justify="center"
             style={{ backgroundColor: '#fff' }}
             p={1}
         >
             Title
-        </Box>
+        </Flex>
     );
     const shouldComponentUpdate = comp.getInstance().shouldComponentUpdate.bind(comp.getInstance());
     expect(shouldComponentUpdate(comp.getInstance().props)).toBeFalsy();

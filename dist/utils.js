@@ -1,6 +1,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.PADDING_PROPS = exports.MARGIN_PROPS = undefined;
 exports.computeStyle = computeStyle;
 
 var _lodash = require('lodash');
@@ -13,6 +14,17 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
                                                                                                                                                                                                                               * Copyright by AIWSolutions.
                                                                                                                                                                                                                               */
 
+
+var MARGIN_PROPS = exports.MARGIN_PROPS = ['m', 'mt', 'mb', 'ml', 'mr'];
+var PADDING_PROPS = exports.PADDING_PROPS = ['p', 'pt', 'pb', 'pl', 'pr'];
+
+var GLOBAL_ATTRIBUTES = ['accessKey', 'className', 'contentEditable', 'dir', 'draggable', 'hidden', 'id', 'lang', 'spellCheck', 'tabIndex', 'title', 'translate'];
+
+var EVENT_HANDLERS_REGEX = /^on[A-Z][a-z]*/;
+
+var DATA_REGEX = /^data-[a-zA-Z]*/;
+
+var ARIA_REGEX = /^aria-[a-zA-Z]*/;
 
 function scale(value) {
     if (_lodash2['default'].isNumber(value)) {
@@ -50,6 +62,8 @@ function computeStyle(props) {
         }, function (value) {
             return !_lodash2['default'].isUndefined(value);
         }),
-        others: others
+        others: _lodash2['default'].pickBy(others, function (value, key) {
+            return _lodash2['default'].includes(GLOBAL_ATTRIBUTES, key) || EVENT_HANDLERS_REGEX.test(key) || DATA_REGEX.test(key) || ARIA_REGEX.test(key);
+        })
     };
 }

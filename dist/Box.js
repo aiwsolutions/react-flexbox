@@ -20,7 +20,9 @@ var _lodash2 = _interopRequireDefault(_lodash);
 
 var _utils = require('./utils');
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
@@ -33,28 +35,43 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 */
 
 
+/**
+ * Represent a simple container which is not a Flex container.
+ * This container has built in shouldComponentUpdate to prevent unwanted updates when there is no changes on
+ * its property
+ * There is also basic property filtering for invalid propery when passing property from its parent like this:
+ *      <Box
+ *          {...props}
+ *      />
+ *
+ * @property {string} align     - Shorthand for css align-self, this allows the default alignment (or the one
+ *                                specified by align-items) to be overridden for individual flex items.
+ * @property {bool} auto        - Shorthand for css flex: 1 1 auto
+ * @property {string, number} basis   - Shorthand for css flex-basis, it defines the default size of an element
+ *                                before the remaining space is distributed
+ * @property {number} col       - How many x of 1/12 of width of the parent container that this element should take.
+ *                                This equals to css width: (col * 100 / 12)%
+ * @property {number} grow      - Shorthand for css flex-grow, it defines what amount of the available
+ *                                space inside the flex container the item should take up
+ * @property {number} order     - Controls the order in which this Box appears in the Flex container
+ * @property {number} shrink    - Shorthand for css flex-shrink, it defines the ability for a flex item
+ *                                to shrink if necessary.
+ * @property {object} style     - Element style
+ */
 var Box = function (_React$Component) {
     _inherits(Box, _React$Component);
 
     function Box() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
         _classCallCheck(this, Box);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Box.__proto__ || Object.getPrototypeOf(Box)).call.apply(_ref, [this].concat(args))), _this), _this.ownProps = _lodash2['default'].keys(Box.propTypes), _temp), _possibleConstructorReturn(_this, _ret);
+        return _possibleConstructorReturn(this, (Box.__proto__ || Object.getPrototypeOf(Box)).apply(this, arguments));
     }
 
     _createClass(Box, [{
         key: 'shouldComponentUpdate',
         value: function () {
             function shouldComponentUpdate(nextProps) {
-                return this.props.children !== nextProps.children || !_lodash2['default'].isEqual(_lodash2['default'].pick(this.props, this.ownProps), _lodash2['default'].pick(nextProps, this.ownProps));
+                return this.props.children !== nextProps.children || !_lodash2['default'].isEqual(_lodash2['default'].pick(this.props, Box.ownProps), _lodash2['default'].pick(nextProps, Box.ownProps));
             }
 
             return shouldComponentUpdate;
@@ -125,6 +142,8 @@ Box.propTypes = {
     basis: _propTypes2['default'].oneOfType([_propTypes2['default'].string, _propTypes2['default'].number]),
     align: _propTypes2['default'].oneOf(['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch']),
     col: _propTypes2['default'].oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
-    style: _propTypes2['default'].object
+    style: _propTypes2['default'].object,
+    className: _propTypes2['default'].string
 };
+Box.ownProps = [].concat(_toConsumableArray(_lodash2['default'].keys(Box.propTypes)), _toConsumableArray(_utils.MARGIN_PROPS), _toConsumableArray(_utils.PADDING_PROPS));
 exports['default'] = Box;

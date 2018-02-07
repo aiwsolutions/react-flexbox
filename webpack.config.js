@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ROOT_PATH = path.resolve(__dirname);
@@ -33,7 +32,6 @@ module.exports = {
         ],
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
         new HtmlWebpackPlugin({
             title: 'React flexbox examples',
             template: 'index.ejs',

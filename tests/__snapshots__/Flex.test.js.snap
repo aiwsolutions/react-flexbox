@@ -1,21 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Box> - basic settings 1`] = `
+exports[`<Flex> - basic settings 1`] = `
 <div
+  className="flex"
   style={
     Object {
-      "WebkitAlignSelf": undefined,
+      "WebkitAlignItems": undefined,
       "WebkitBoxSizing": "border-box",
       "WebkitFlexBasis": undefined,
+      "WebkitFlexDirection": "column",
       "WebkitFlexGrow": undefined,
       "WebkitFlexShrink": undefined,
+      "WebkitFlexWrap": undefined,
+      "WebkitJustifyContent": undefined,
       "WebkitOrder": undefined,
-      "alignSelf": undefined,
+      "alignItems": undefined,
       "backgroundColor": "#ff0000",
       "boxSizing": "border-box",
       "flexBasis": undefined,
+      "flexDirection": "column",
       "flexGrow": undefined,
       "flexShrink": undefined,
+      "flexWrap": undefined,
+      "justifyContent": undefined,
       "margin": 8,
       "order": undefined,
       "padding": 8,
@@ -26,22 +33,28 @@ exports[`<Box> - basic settings 1`] = `
 </div>
 `;
 
-exports[`<Box> - className should be passed correctly 1`] = `
+exports[`<Flex> - className should be passed correctly 1`] = `
 <div
-  className="test"
+  className="inline-flex test"
   style={
     Object {
-      "WebkitAlignSelf": undefined,
+      "WebkitAlignItems": undefined,
       "WebkitBoxSizing": "border-box",
       "WebkitFlexBasis": undefined,
+      "WebkitFlexDirection": "row",
       "WebkitFlexGrow": undefined,
       "WebkitFlexShrink": undefined,
+      "WebkitFlexWrap": undefined,
+      "WebkitJustifyContent": undefined,
       "WebkitOrder": undefined,
-      "alignSelf": undefined,
+      "alignItems": undefined,
       "boxSizing": "border-box",
       "flexBasis": undefined,
+      "flexDirection": "row",
       "flexGrow": undefined,
       "flexShrink": undefined,
+      "flexWrap": undefined,
+      "justifyContent": undefined,
       "order": undefined,
     }
   }
