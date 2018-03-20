@@ -18,11 +18,11 @@ jobs:
     working_directory: ~/checkout-dir
 
     steps:
-      - checkout
-
       # Download and cache dependencies
       - restore_cache:
-          keys: v1-dependencies-{{ checksum "package.json" }}
+          key: checkout-{{ checksum "package.json" }}
+
+      - checkout
 
       - run: yarn install
 
@@ -32,7 +32,7 @@ jobs:
       - save_cache:
           paths:
             - ~/checkout-dir
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: checkout-{{ checksum "package.json" }}
 
   build_and_publish:
     docker:
@@ -42,7 +42,7 @@ jobs:
 
     steps:
       - restore_cache:
-          keys: v1-dependencies-{{ checksum "package.json" }}
+          key: checkout-{{ checksum "package.json" }}
       
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 
