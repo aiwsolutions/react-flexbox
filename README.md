@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/aiwsolutions/react-flexbox/tree/master.svg?style=svg&circle-token=89de5fc38eb55a41b3b7f395969c3993c0ddcfbf)](https://circleci.com/gh/aiwsolutions/react-flexbox/tree/master)
+
 # react-flexbox
 React flexbox layout with intuitive style settings.
 There is no fancy compares to other libraries, it is just another way of declaring flexbox layout in react.
