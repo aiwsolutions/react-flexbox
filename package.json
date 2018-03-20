@@ -4,7 +4,7 @@
   "description": "An easy to use flexbox layout",
   "main": "dist/index.js",
   "scripts": {
-    "build": "NODE_ENV=production babel src --out-dir dist",
+    "build": "NODE_ENV=production babel src --out-dir dist && cp src/flexbox.css dist/",
     "serve": "webpack-dev-server",
     "doc": "jsdoc -d ./docs ./src",
     "test": "node node_modules/jest/bin/jest.js --testPathPattern=tests",
