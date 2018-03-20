@@ -9,32 +9,32 @@ module.exports = {
     entry: 'index',
     output: {
         filename: 'bundle.js',
-        path: path.join(ROOT_PATH, 'live'),
+        path: path.join(ROOT_PATH, 'live')
     },
     resolve: {
         extensions: ['.js', '.jsx'],
         modules: [
             EXAMPLE_PATH,
-            path.join(ROOT_PATH, 'node_modules'),
-        ],
+            path.join(ROOT_PATH, 'node_modules')
+        ]
     },
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
                 use: ['babel-loader'],
-                exclude: path.resolve(ROOT_PATH, 'node_modules'),
+                exclude: path.resolve(ROOT_PATH, 'node_modules')
             },
             {
                 test: /\.s?css/,
-                use: ['style-loader', 'css-loader'],
-            },
-        ],
+                use: ['style-loader', 'css-loader']
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'React flexbox examples',
-            template: 'index.ejs',
-        }),
-    ],
+            template: 'index.ejs'
+        })
+    ]
 };
