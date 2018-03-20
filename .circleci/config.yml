@@ -41,6 +41,12 @@ jobs:
     working_directory: ~/checkout-dir
 
     steps:    
+      - checkout
+      
+      # Download cached dependencies
+      - restore_cache:
+          key: dependencies-{{ checksum "package.json" }}
+
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 
       - run: npm run build
