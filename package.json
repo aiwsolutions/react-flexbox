@@ -20,7 +20,7 @@
     "url": "git@gitlab.com:aiwsolutions/react-flexbox.git"
   },
   "author": "AIW Solutions",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "homepage": "https://aiwsolutions.com",
   "devDependencies": {
     "babel-cli": "^6.26.0",

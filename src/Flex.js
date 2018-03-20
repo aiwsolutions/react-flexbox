@@ -1,6 +1,3 @@
-/**
- * Copyright by AIWSolutions.
- */
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -71,7 +68,10 @@ class Flex extends React.Component {
         className: PropTypes.string,
     };
 
-    static ownProps = [..._.keys(Flex.propTypes), ...MARGIN_PROPS, ...PADDING_PROPS];
+    static ownProps = [
+        'auto', 'column', 'reverse', 'order', 'grow', 'shrink', 'wrap', 'justify', 'align', 'fullWidth',
+        'inline', 'col', 'style', 'className', ...MARGIN_PROPS, ...PADDING_PROPS
+    ];
 
     shouldComponentUpdate(nextProps) {
         return this.props.children !== nextProps.children

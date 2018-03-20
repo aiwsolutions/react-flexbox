@@ -1,6 +1,3 @@
-/**
- * Copyright by AIWSolutions.
- */
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -52,7 +49,11 @@ class Box extends React.Component {
         className: PropTypes.string,
     };
 
-    static ownProps = [..._.keys(Box.propTypes), ...MARGIN_PROPS, ...PADDING_PROPS];
+    // Should not get from propTypes as it will be trimmed
+    static ownProps = [
+        'order', 'auto', 'grow', 'shrink', 'basic', 'align', 'col', 'style', 'className',
+        ...MARGIN_PROPS, ...PADDING_PROPS
+    ];
 
     shouldComponentUpdate(nextProps) {
         return this.props.children !== nextProps.children
