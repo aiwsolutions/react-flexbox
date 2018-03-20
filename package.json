@@ -2,6 +2,12 @@
   "name": "aiws-react-flexbox",
   "version": "0.0.2",
   "description": "An easy to use flexbox layout",
+  "keywords": [
+    "react",
+    "flexbox",
+    "flex",
+    "layout"
+  ],
   "main": "dist/index.js",
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist && cp src/flexbox.css dist/",
@@ -21,7 +27,7 @@
   },
   "author": "AIW Solutions",
   "license": "MIT",
-  "homepage": "https://aiwsolutions.com",
+  "homepage": "https://aiwsolutions.github.io/react-flexbox/",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
