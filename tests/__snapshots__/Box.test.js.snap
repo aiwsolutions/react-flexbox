@@ -4,20 +4,10 @@ exports[`<Box> - basic settings 1`] = `
 <div
   style={
     Object {
-      "WebkitAlignSelf": undefined,
       "WebkitBoxSizing": "border-box",
-      "WebkitFlexBasis": undefined,
-      "WebkitFlexGrow": undefined,
-      "WebkitFlexShrink": undefined,
-      "WebkitOrder": undefined,
-      "alignSelf": undefined,
       "backgroundColor": "#ff0000",
       "boxSizing": "border-box",
-      "flexBasis": undefined,
-      "flexGrow": undefined,
-      "flexShrink": undefined,
       "margin": 8,
-      "order": undefined,
       "padding": 8,
     }
   }
@@ -31,18 +21,8 @@ exports[`<Box> - className should be passed correctly 1`] = `
   className="test"
   style={
     Object {
-      "WebkitAlignSelf": undefined,
       "WebkitBoxSizing": "border-box",
-      "WebkitFlexBasis": undefined,
-      "WebkitFlexGrow": undefined,
-      "WebkitFlexShrink": undefined,
-      "WebkitOrder": undefined,
-      "alignSelf": undefined,
       "boxSizing": "border-box",
-      "flexBasis": undefined,
-      "flexGrow": undefined,
-      "flexShrink": undefined,
-      "order": undefined,
     }
   }
 />

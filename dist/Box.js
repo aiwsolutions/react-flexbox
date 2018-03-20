@@ -30,10 +30,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Copyright by AIWSolutions.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
  * Represent a simple container which is not a Flex container.
@@ -47,7 +44,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * @property {string} align     - Shorthand for css align-self, this allows the default alignment (or the one
  *                                specified by align-items) to be overridden for individual flex items.
  * @property {bool} auto        - Shorthand for css flex: 1 1 auto
- * @property {string, number} basis   - Shorthand for css flex-basis, it defines the default size of an element
+ * @property {string | number} basis   - Shorthand for css flex-basis, it defines the default size of an element
  *                                before the remaining space is distributed
  * @property {number} col       - How many x of 1/12 of width of the parent container that this element should take.
  *                                This equals to css width: (col * 100 / 12)%
@@ -76,6 +73,9 @@ var Box = function (_React$Component) {
 
             return shouldComponentUpdate;
         }()
+
+        // Should not get from propTypes as it will be trimmed
+
     }, {
         key: 'render',
         value: function () {
@@ -92,7 +92,7 @@ var Box = function (_React$Component) {
                     style = _props.style,
                     others = _objectWithoutProperties(_props, ['children', 'order', 'auto', 'grow', 'shrink', 'basis', 'align', 'col', 'style']);
 
-                var boxStyle = {
+                var boxStyle = _lodash2['default'].pickBy({
                     WebkitOrder: order,
                     order: order,
                     WebkitBoxSizing: 'border-box',
@@ -105,7 +105,7 @@ var Box = function (_React$Component) {
                     flexBasis: basis,
                     WebkitAlignSelf: align,
                     alignSelf: align
-                };
+                }, _lodash2['default'].identity);
 
                 if (auto) {
                     boxStyle.WebkitFlex = '1 1 auto';
@@ -145,5 +145,5 @@ Box.propTypes = {
     style: _propTypes2['default'].object,
     className: _propTypes2['default'].string
 };
-Box.ownProps = [].concat(_toConsumableArray(_lodash2['default'].keys(Box.propTypes)), _toConsumableArray(_utils.MARGIN_PROPS), _toConsumableArray(_utils.PADDING_PROPS));
+Box.ownProps = ['order', 'auto', 'grow', 'shrink', 'basic', 'align', 'col', 'style', 'className'].concat(_toConsumableArray(_utils.MARGIN_PROPS), _toConsumableArray(_utils.PADDING_PROPS));
 exports['default'] = Box;

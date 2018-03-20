@@ -13,8 +13,8 @@ import './flexbox.css';
  *          {...props}
  *      />
  *
- * @property {string} align     - Shorthand for css align-items, This defines the default behaviour for how flex 
- *                                items are laid out along the cross axis on the current line. 
+ * @property {string} align     - Shorthand for css align-items, This defines the default behaviour for how flex
+ *                                items are laid out along the cross axis on the current line.
  * @property {bool} auto        - Shorthand for css flex: 1 1 auto
  * @property {string | number} basis   - Shorthand for css flex-basis, it defines the default size of an element
  *                                before the remaining space is distributed
@@ -45,27 +45,27 @@ class Flex extends React.Component {
         wrap: PropTypes.oneOf([
             'nowrap',
             'wrap',
-            'wrap-reverse',
+            'wrap-reverse'
         ]),
         justify: PropTypes.oneOf([
             'flex-start',
             'flex-end',
             'center',
             'space-between',
-            'space-around',
+            'space-around'
         ]),
         align: PropTypes.oneOf([
             'flex-start',
             'flex-end',
             'center',
             'stretch',
-            'baseline',
+            'baseline'
         ]),
         fullWidth: PropTypes.bool,
         inline: PropTypes.bool,
         col: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
         style: PropTypes.object,
-        className: PropTypes.string,
+        className: PropTypes.string
     };
 
     static ownProps = [
@@ -104,7 +104,7 @@ class Flex extends React.Component {
         const flexDirection = column ? (reverse ? 'column-reverse' : 'column')
             : (reverse ? 'row-reverse' : 'row');
 
-        const flexStyle = {
+        const flexStyle = _.pickBy({
             WebkitOrder: order,
             order,
             WebkitBoxSizing: 'border-box',
@@ -122,8 +122,8 @@ class Flex extends React.Component {
             WebkitJustifyContent: justify,
             justifyContent: justify,
             WebkitAlignItems: align,
-            alignItems: align,
-        };
+            alignItems: align
+        }, _.identity);
 
         if (auto) {
             flexStyle.WebkitFlex = '1 1 auto';
@@ -134,7 +134,7 @@ class Flex extends React.Component {
             flexStyle.width = '100%';
         }
         if (col) {
-            const widthPercentage = col * 100 / 12;
+            const widthPercentage = (col * 100) / 12;
             flexStyle.width = `${widthPercentage.toFixed(2)}%`;
         }
 

@@ -6,5 +6,5 @@ import Box from './Box';
 
 module.exports = {
     Flex,
-    Box,
+    Box
 };

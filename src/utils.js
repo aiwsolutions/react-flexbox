@@ -18,7 +18,7 @@ const GLOBAL_ATTRIBUTES = [
     'spellCheck',
     'tabIndex',
     'title',
-    'translate',
+    'translate'
 ];
 
 const EVENT_HANDLERS_REGEX = /^on[A-Z][a-z]*/;
@@ -49,12 +49,12 @@ export function computeStyle(props) {
             paddingRight: scale(pr),
             paddingBottom: scale(pb),
             paddingLeft: scale(pl),
-            padding: scale(p),
-        }, value => !_.isUndefined(value)),
+            padding: scale(p)
+        }, _.identity),
         others: _.pickBy(others, (value, key) =>
             _.includes(GLOBAL_ATTRIBUTES, key)
             || EVENT_HANDLERS_REGEX.test(key)
             || DATA_REGEX.test(key)
-            || ARIA_REGEX.test(key)),
+            || ARIA_REGEX.test(key))
     };
 }

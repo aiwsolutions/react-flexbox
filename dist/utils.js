@@ -59,9 +59,7 @@ function computeStyle(props) {
             paddingBottom: scale(pb),
             paddingLeft: scale(pl),
             padding: scale(p)
-        }, function (value) {
-            return !_lodash2['default'].isUndefined(value);
-        }),
+        }, _lodash2['default'].identity),
         others: _lodash2['default'].pickBy(others, function (value, key) {
             return _lodash2['default'].includes(GLOBAL_ATTRIBUTES, key) || EVENT_HANDLERS_REGEX.test(key) || DATA_REGEX.test(key) || ARIA_REGEX.test(key);
         })

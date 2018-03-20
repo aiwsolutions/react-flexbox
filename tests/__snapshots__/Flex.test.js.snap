@@ -5,26 +5,12 @@ exports[`<Flex> - basic settings 1`] = `
   className="flex"
   style={
     Object {
-      "WebkitAlignItems": undefined,
       "WebkitBoxSizing": "border-box",
-      "WebkitFlexBasis": undefined,
       "WebkitFlexDirection": "column",
-      "WebkitFlexGrow": undefined,
-      "WebkitFlexShrink": undefined,
-      "WebkitFlexWrap": undefined,
-      "WebkitJustifyContent": undefined,
-      "WebkitOrder": undefined,
-      "alignItems": undefined,
       "backgroundColor": "#ff0000",
       "boxSizing": "border-box",
-      "flexBasis": undefined,
       "flexDirection": "column",
-      "flexGrow": undefined,
-      "flexShrink": undefined,
-      "flexWrap": undefined,
-      "justifyContent": undefined,
       "margin": 8,
-      "order": undefined,
       "padding": 8,
     }
   }
@@ -38,24 +24,10 @@ exports[`<Flex> - className should be passed correctly 1`] = `
   className="inline-flex test"
   style={
     Object {
-      "WebkitAlignItems": undefined,
       "WebkitBoxSizing": "border-box",
-      "WebkitFlexBasis": undefined,
       "WebkitFlexDirection": "row",
-      "WebkitFlexGrow": undefined,
-      "WebkitFlexShrink": undefined,
-      "WebkitFlexWrap": undefined,
-      "WebkitJustifyContent": undefined,
-      "WebkitOrder": undefined,
-      "alignItems": undefined,
       "boxSizing": "border-box",
-      "flexBasis": undefined,
       "flexDirection": "row",
-      "flexGrow": undefined,
-      "flexShrink": undefined,
-      "flexWrap": undefined,
-      "justifyContent": undefined,
-      "order": undefined,
     }
   }
 />

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Flex } from '../dist';
+import { Flex } from '../src';
 
 test('<Flex> - basic settings', () => {
     const comp = renderer.create(

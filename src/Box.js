@@ -34,7 +34,7 @@ class Box extends React.Component {
         shrink: PropTypes.number,
         basis: PropTypes.oneOfType([
             PropTypes.string,
-            PropTypes.number,
+            PropTypes.number
         ]),
         align: PropTypes.oneOf([
             'auto',
@@ -42,11 +42,11 @@ class Box extends React.Component {
             'flex-end',
             'center',
             'baseline',
-            'stretch',
+            'stretch'
         ]),
         col: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]),
         style: PropTypes.object,
-        className: PropTypes.string,
+        className: PropTypes.string
     };
 
     // Should not get from propTypes as it will be trimmed
@@ -64,7 +64,7 @@ class Box extends React.Component {
         const {
             children, order, auto, grow, shrink, basis, align, col, style, ...others
         } = this.props;
-        const boxStyle = {
+        const boxStyle = _.pickBy({
             WebkitOrder: order,
             order,
             WebkitBoxSizing: 'border-box',
@@ -76,8 +76,8 @@ class Box extends React.Component {
             WebkitFlexBasis: basis,
             flexBasis: basis,
             WebkitAlignSelf: align,
-            alignSelf: align,
-        };
+            alignSelf: align
+        }, _.identity);
 
         if (auto) {
             boxStyle.WebkitFlex = '1 1 auto';

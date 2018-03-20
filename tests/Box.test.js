@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Box } from '../dist';
+import { Box } from '../src';
 
 test('<Box> - basic settings', () => {
     const comp = renderer.create(
